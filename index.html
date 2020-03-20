@@ -1,0 +1,102 @@
+<style type="text/css">
+  body {
+    background: #111;
+    overflow: hidden;
+  }
+  div {
+    white-space: nowrap;
+  }
+  pre {
+    display: inline-block;
+    margin: 0;
+
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+
+    font-size: 16px;
+    transition: font-size 1s, width 1s, height 1s;
+  }
+  #container {
+    position: relative;
+    width: 70%;
+    min-width: 100vh;
+    height: 100%;
+  }
+  #sidebar {
+    width: 200px;
+  }
+
+  #world {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #world.battle .player, #world.battle .letter {
+    font-size: 48px;
+  }
+
+  #world.battle pre {
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .player {
+    position: relative;
+    animation: player 2s infinite;
+    color: #ff5;
+  }
+
+  .plain {
+    color: #aa7;
+  }
+
+  .grass {
+    color: #7a7;
+  }
+
+  .wood {
+    color: #773;
+  }
+
+  .mountain {
+    color: #aaa;
+  }
+
+  .water {
+    color: #55f;
+  }
+
+  .letter {
+    color: #fff;
+    position: relative;
+    animation: letter 2s infinite;
+  }
+
+  @keyframes player {
+    0%   { top: 0; }
+    50% { top: 3px; }
+    100% { top: 0; }
+  }
+
+  @keyframes letter {
+    0%   { top: 3px; }
+    50% { top: 0; }
+    100% { top: 3px; }
+  }
+
+</style>
+
+<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./p5.min.js"></script>
+<script type="text/javascript" src="./main.js"></script>
+
+<div id="container">
+  <div id="world"></div>
+</div>
+<div id="sidebar">
+</div>
